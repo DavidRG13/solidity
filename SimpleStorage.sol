@@ -9,6 +9,8 @@ contract SimpleStorage {
     }
     Person[] public people;
 
+    mapping(string => uint256) public nameToFav;
+
     uint256 public favouriteNumber;
 
     function store(uint256 _favouriteNumber) public {
@@ -25,5 +27,6 @@ contract SimpleStorage {
 
     function addPerson(string memory _name, uint256 _favouriteNumber) public {
         people.push(Person({favouriteNumber: _favouriteNumber, name: _name}));
+        nameToFav[_name] = _favouriteNumber;
     }
 }

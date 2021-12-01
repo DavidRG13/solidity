@@ -11,4 +11,8 @@ contract SimpleStorage {
     function get() public view returns(uint256) {
         return favouriteNumber;
     }
+
+    function compute(uint256 number) public pure {
+        number + number;
+    }
 }

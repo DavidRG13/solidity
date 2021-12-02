@@ -11,4 +11,9 @@ contract SimpleStorageFactory {
          SimpleStorage simpleStorage = new SimpleStorage();
          simpleStorages.push(simpleStorage);
      }
+
+    function simpleStorageStore(uint256 _index, uint256 _number) public {
+        SimpleStorage simpleStorage = SimpleStorage(address(simpleStorages[_index]));
+        simpleStorage.store(_number);
+    }
 }
